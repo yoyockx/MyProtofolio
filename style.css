@@ -1,0 +1,653 @@
+
+
+:root {
+    --blue: #6495ed;
+    --Color: rgb(51, 51, 51);
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html {  
+    scroll-behavior: smooth;  
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    cursor: url('SmallKaiser.png'), auto;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+.Nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Nav-container .Logo span{
+    font-size: 2rem;
+    font-weight: bold;
+    
+    color: var(--Color);
+
+}
+
+.hamburg,
+.Cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    font-size: clamp(2.5rem,0.5rem + 5vw,3rem);
+    display: none;
+}
+
+.Nav-container .links{
+    display: flex;
+}
+
+.Nav-container .links a{
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+
+}
+
+.Nav-container .links a:hover{
+    color: var(--Color);
+    border-bottom:2px solid var(--Color) ;
+}
+
+.DropDown{
+    z-index: 10;
+    position: absolute;
+    top:0;
+    transform: translateY(-400px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(5px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.DropDown a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s linear;
+
+}
+
+.DropDown a:hover{
+    background-color: var(--Color);
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    
+}
+
+.main-container .image{
+    margin-top: 5%;
+    width: 350px;
+    height: 80vh;
+    overflow: hidden;
+    
+}
+
+.main-container .image img{
+    width: 100%;
+
+    border-radius: 100%;
+}
+
+
+
+@keyframes animate{
+    0%{
+        scale: 1;
+    }
+
+    50%{
+        scale: 1.05;
+    }
+    100%{
+        scale: 1;
+    }
+}
+
+.main-container .Content{
+    color: white;
+    width: 40%;
+    min-height: 100px;
+}
+
+.Content h1{
+    font-size: clamp(1rem,1rem + 5vw,1.8rem);
+}
+
+.Content h1 span{
+    font-weight: 700;
+    color: var(--Color);
+    text-shadow: 0 0 10px var(--Color);
+}
+
+.Typing-Text{
+    font-size: clamp(1rem,1rem + 5vw,2.5rem);
+    font-weight: 700;
+    position: relative;
+}
+
+.Typing-Text span::before{
+    content: "";
+    color: var(--Color);
+    animation: words 20s infinite;
+}
+
+.Typing-Text span::after{
+    content: "";
+    background-color: transparent;
+    
+    width: calc(100% + 8px);
+    height: 100%;
+    border-right: 3px solid black;
+    
+    animation: cursor 0.5s infinite;
+}
+
+
+@keyframes cursor {
+   to{
+    border-right: 3px solid white;
+   }
+}
+
+@keyframes words{
+    0%,20%{
+        content: "Scripter";
+    }
+
+    21%,40%{
+        content: "UI Designer";
+    }
+
+    41%,60%{
+        content: "Roblox Developer";
+    }
+
+    61%,80%{
+        content: "Programmer";
+    }
+
+    81%,100%{
+        content: "Web Developer";
+    }
+}
+
+.Content p{
+    font-size: clamp(0.4rem,0.2rem + 9vw, 1.2rem);
+    margin: 10px 0;
+}
+
+
+.Social-links i{
+  display: inline-flex;
+  justify-content: center;
+  width: 3rem;
+  align-items: center;
+  height: 3rem;
+  background-color: transparent;
+  border:0.2rem solid var(--Color);
+  color: var(--Color);
+  margin: 5px 15px 5px 0;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: 0.2s linear;
+}
+
+.Social-links i:hover{
+    scale: 1.3;
+    filter: drop-shadow(0 0 10px var(--Color));
+    background-color: var(--Color);
+    color: white;
+}
+
+#PAYMENT_DIV{
+    
+    width: 100%;
+    height: 75%;
+    
+    overflow: hidden;
+    border-radius: 20px;
+    margin-left: 0px;
+    padding-top: 10px;
+}
+#collect{
+    width: 40%;
+    height: 95%;
+    background-color: rgb(23, 23, 23);
+    overflow: hidden;
+    border-radius: 20px;
+    margin-left: 50px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(75, 75, 75, 0.477), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#Prices{
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    margin-top: 10px;
+}
+
+#Title{
+    height: 20%;
+    width: 100%;
+    overflow: hidden;
+    
+    align-items:top;  
+    background-color: rgba(53, 53, 53, 0.668);
+    padding: 5px;
+    padding-left: 10px;
+    
+    align-items: center;
+}
+
+#Price_box{
+    background-color: var(--Color);
+    border-radius: 10px;
+    width:25%;
+    height: 45%;
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(75, 75, 75, 0.477), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+#SomeBox{
+    height: 30%;
+    width: 100%;
+    
+}
+#Main{
+    height: 95%;
+    padding: 5px;
+    margin-left: 6px;
+}
+#Price_box h3{
+    font-size: clamp(0.8rem, 2vw, 1.15rem);
+    
+}
+#SomeBox h2{
+    font-size: clamp(0.9rem, 4vw, 1.6rem);
+}
+#Title h3{
+    font-size: clamp(1.2rem, 3vw, 2.1rem);
+}
+
+#Title h5{
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+#Projects{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    margin-top: 100px;
+}
+
+#Row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 90%;
+
+}
+
+#arrowImg{
+    background: none;
+    height: 100%;
+    width: 96%;
+    
+
+}
+
+.ArrowButton{
+    background: none;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    height: 5%;
+    width: 8%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5 ;
+}
+
+.ArrowButton:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+#Card {
+    width: 75%;
+    height: 98% !important;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--Color);
+    padding: 7px;
+
+}
+
+#ShowCase{
+    width: 95%;
+    height: 80%;
+}
+iframe{
+    border-radius: 20px;
+    width: 100%;
+    height: 99% ;
+    margin-bottom: 0px;
+    background-color: transparent;
+    object-fit:fill;
+   
+}
+
+
+
+#CardTitle{
+    margin-top: 0px;
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+}
+#Desc{
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
+}
+
+#ArrowsRow{
+    display: none;
+}
+
+@media (max-width:1370px){
+    #PAYMENT_DIV {
+        width: 100%;
+        height: 95%; /* Make it flexible */
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #collect {
+        width: 95%;
+        height: 75%; /* More natural on smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+        position: static;
+        box-shadow: none; /* Optional, if you want a lighter mobile look */
+    }
+}
+
+
+@media (max-width:884px){
+    nav .Logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+
+    }
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .Nav-container .links{
+        display: none;
+    }
+
+    .hamburg,
+    .Cancel{
+        display: block;
+    }
+    .main-container .Content{
+        width: 80%;
+        margin-top: -40px;
+        position: relative;
+    }
+
+    .Social-links{
+        display: flex;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+        flex-direction: row;
+    }
+    
+   
+    .main-container .image{
+        z-index: -1;
+        width: 50%;
+        height: 60%;
+        position: relative;
+    }
+
+    .Typing-Text{
+        font-size: 1.6rem;
+    }
+    .DropDown{
+        z-index: 100;
+    }
+
+    #PAYMENT_DIV {
+        width: 100%;
+        height: 65%; /* Make it flexible */
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #collect {
+        width: 95%;
+        height: 95%; /* More natural on smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+        position: static;
+        box-shadow: none; /* Optional, if you want a lighter mobile look */
+    }
+    #Title{
+        height: 20%;
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 10px;
+        align-items:top;  
+        background-color: rgba(53, 53, 53, 0.668);
+        padding: 10px;
+    }
+    
+}
+
+@media(max-width:440px) {
+        .main-container .image{
+            width: 60%;
+            height: 60%;
+        }
+
+        .main-container .Content{
+            width:80% ;
+        }
+
+        #PAYMENT_DIV {
+            width: 100%;
+            height: 65%; /* Make it flexible */
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+    
+        #collect {
+            width: 95%;
+            height: 95%; /* More natural on smaller screens */
+            margin-left: auto;
+            margin-right: auto;
+            position: static;
+            box-shadow: none; /* Optional, if you want a lighter mobile look */
+        }
+        #Title{
+            height: 15%;
+            width: 100%;
+            overflow: hidden;
+            padding-bottom: 10px;
+              
+            background-color: rgba(53, 53, 53, 0.668);
+            padding: 10px;
+            
+        }
+        #Card {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            
+            align-items: center;
+            border-radius: 15px;
+            background-color: var(--Color);
+            padding: 7px;
+        
+        }
+        #Row{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            height: 60%;
+        
+        }
+    
+        #SomeBox{
+        height: 30%;
+        width: 100%;
+        }
+
+    
+        #Price_box{
+        background-color: var(--Color);
+        border-radius: 10px;
+        width:25%;
+        height: 45%;
+        display: flex;
+        flex-direction:column ;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px 0 rgba(75, 75, 75, 0.477), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+    #Projects{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    margin-top: 0px;
+    }
+    #ArrowsRow{
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        height: 15%;
+    }
+
+    
+
+    #Row .ArrowButton{
+        display: none;
+    }
+
+    #ArrowsRow .MobileArrowButton{
+         background: none;
+        background-color: transparent;
+        border: none;
+        color: transparent;
+        height: 100%;
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.5; 
+    }
+
+    #Row{
+        flex-direction: column;
+    }
+    #ArrowsRow .MobileArrowButton:hover{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    
+}
+
+
+
+
